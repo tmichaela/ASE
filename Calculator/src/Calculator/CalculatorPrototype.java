@@ -10,15 +10,15 @@ public class CalculatorPrototype implements calculatorIf {
     }
     @Override
     public int divide(int m, int n) {
-        int Result;
         int counter = 0;
-        if(n !=0) {
-            while (m > 0)
-                Result = m - n;
-            counter += 1;
+        try {
+            while (m > 0) {
+                m -= n;
+                counter++;
+            }
             if (m != 0)
                 counter -= 1;
-        }
+        }catch(ArithmeticException e){ System.err.print(e);};
         return counter;
     }
     @Override
